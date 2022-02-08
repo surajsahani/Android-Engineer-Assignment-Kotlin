@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AudioPlayer</string>
+    <string name="app_name">Songify</string>
+
+    <string name="label_1x">1x</string>
+    <string name="label_2x">2x</string>
+    <string name="label_3x">3x</string>
+
+    <string name="message_song_added_to_favorites">Song added to favorites!</string>
+    <string name="message_song_removed_from_favorites">Song removed from favorites!</string>
+    <string name="message_song_is_downloading">Song is being downloaded!</string>
 </resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/appMargin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/appMargin" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewPlayerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_song_background" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewAlbumArt"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="?actionBarSize"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/textViewSongTitle"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.AlbumAppearance"
+        app:srcCompat="@drawable/dummy_album_art" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSongTitle"
+        style="@style/SongTitle"
+        app:layout_constraintBottom_toTopOf="@id/textViewArtistName"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        tools:text="Song Title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewArtistName"
+        style="@style/RobotoLight.White.16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/imageViewPlayPause"
+        app:layout_constraintEnd_toEndOf="@id/textViewSongTitle"
+        app:layout_constraintStart_toStartOf="@id/textViewSongTitle"
+        tools:text="Artist name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewPlayPause"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:srcCompat="@drawable/ic_play_button" />
+
+    <CheckBox
+        android:id="@+id/buttonFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:button="@drawable/ic_selector_favorite"
+        android:buttonTint="@color/white"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewPlayPause"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@id/imageViewPlayPause" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPlayBackSpeed"
+        style="@style/RobotoLight.White.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/label_1x"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewPlayPause"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/imageViewPlayPause" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:progressTint="@color/white"
+        app:indicatorColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/buttonVolume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackThickness="16dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/buttonVolume"
+        app:layout_constraintStart_toStartOf="@id/textViewPlayBackSpeed"
+        app:layout_constraintTop_toTopOf="@id/buttonVolume"
+        app:srcCompat="@drawable/ic_download" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/buttonVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/appMargin"
+        android:button="@drawable/ic_volume_selector"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageViewPlayPause"
+        app:layout_constraintStart_toStartOf="@id/imageViewPlayPause" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/buttonVolume"
+        app:layout_constraintEnd_toEndOf="@id/buttonFavorite"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintTop_toTopOf="@id/buttonVolume"
+        app:srcCompat="@drawable/ic_share" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
