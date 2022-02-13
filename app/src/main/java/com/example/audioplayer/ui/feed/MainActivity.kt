@@ -108,7 +108,6 @@ class MainActivity : BaseActivity() {
     }
 
     private fun addSongToFavorites(song: Song) {
-        // TODO: 16-11-2021
         if (song.isFavorite) {
             showMessage(getString(R.string.message_song_added_to_favorites))
         } else {
@@ -117,7 +116,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun controlVolume() {
-        // TODO: 16-11-2021
+
 
     }
 
